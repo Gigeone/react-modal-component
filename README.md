@@ -20,13 +20,13 @@ When you need the modal component, you have to import the component in your file
 import { Modal } from "react-modal-component-matthieugh";
 ```
 
-#### 2. Required props
+#### 2. Required state
 
-To run this modal, only two props are required
+To run this modal,
 
 ```js
-isOpen, // Boolean
-setIsOpen, // Function to update isModalOpen
+isOpen, // State with Boolean
+setIsOpen, // Function to update isOpen
 ```
 
 ## Example
@@ -42,7 +42,7 @@ const Example = () => {
   return (
     <>
       <button onClick={() => setIsOpen(true)}>Open modal</button>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <h2>Modal test</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
       </Modal>
